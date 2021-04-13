@@ -1,1 +1,11 @@
-<p>video-list works!</p>
+<ul>
+    <!-- "?" here means "return undefined if it's undefined or null" -->
+    <li
+      *ngFor="let v of videos"
+      (click)="selectedVideo = v"
+      [class.highlight]="selectedVideo?.id === v.id"
+    >
+      {{ v.title }} by {{ v.author }}
+    </li>
+  </ul>
+  
